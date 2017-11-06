@@ -1,4 +1,5 @@
 ﻿using Geonet.Domain;
+using System.Collections.Generic;
 using RoleDal=Geonet.DAL.RoleDAL;
 
 namespace Geonet.BL
@@ -22,9 +23,14 @@ namespace Geonet.BL
 
         #region Public Methods
 
+        public List<Role> GetAllRoles()
+        {
+            return roleDal.GetAllRoles();
+        }
+
         public void AddRole (Role roleToAdd)
         {
-            roleDal.saveRole(roleToAdd);
+            roleDal.SaveRole(roleToAdd);
         }
 
         public void DeleteRole(Role roleToDelete)

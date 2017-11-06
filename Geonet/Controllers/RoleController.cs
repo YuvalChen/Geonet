@@ -1,16 +1,31 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Geonet.BL;
 
 namespace Geonet.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("Roles")]
     public class RoleController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        #region DataMembers
+
+        private RoleBL roleBl;
+
+        #endregion
+
+        #region Constructor
+
+        public RoleController ()
         {
-            return new string[] { "value1", "value2" };
+            roleBl = new RoleBL();
+        }
+
+        #endregion
+
+        [HttpGet]
+        public int Get()
+        {
+            var allRoles = roleBl.GetAllRoles();
+            return allRoles.Count;
         }
 
         // GET api/values/5

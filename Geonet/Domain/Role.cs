@@ -7,6 +7,7 @@ namespace Geonet.Domain
         #region Properties
 
         public Permissions[] Permissions { get; set; }
+        public string Name { get; set; }
 
         #endregion
 

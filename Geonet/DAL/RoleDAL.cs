@@ -11,17 +11,28 @@ namespace Geonet.DAL
 
         #endregion
 
+        #region Properties
+
+        public List<Role> Roles { get => roles; set => roles = value; }
+
+        #endregion
+
         #region Public Methods
 
-        public void saveRole(Role newRole)
+        public List<Role> GetAllRoles()
         {
-            roles.Add(newRole);
+            return Roles;
+        }
+
+        public void SaveRole(Role newRole)
+        {
+            Roles.Add(newRole);
         }
 
         public void DeleteRole(Role roleToDelete)
         {
-            roles.Remove(roleToDelete);
-        } 
+            Roles.Remove(roleToDelete);
+        }
 
         #endregion
     }
