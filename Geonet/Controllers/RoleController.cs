@@ -24,8 +24,9 @@ namespace Geonet.Controllers
         [HttpGet]
         public int Get()
         {
-            var allRoles = roleBl.GetAllRoles();
-            return allRoles.Count;
+            return 0;
+            //var allRoles = roleBl.GetAllRoles();
+            //return allRoles.Count;
         }
 
         // GET api/values/5
